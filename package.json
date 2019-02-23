@@ -1,0 +1,26 @@
+{
+  "name": "shop-bot",
+  "version": "1.0.0",
+  "description": "Cypress coding exercise",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^3.1.5"
+  },
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaboma19/shop-bot.git"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Gabriel Ma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaboma19/shop-bot/issues"
+  },
+  "homepage": "https://github.com/gaboma19/shop-bot#readme"
+}
