@@ -11,5 +11,5 @@ npm install
 ## Opening Cypress GUI
 
 ```bash
-./node_modules/.bin/cypress open
+npm run cypress:open
 ```
