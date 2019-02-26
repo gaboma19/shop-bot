@@ -1,6 +1,3 @@
-import { configurePhone } from '../components/configure'
-
-/* eslint-disable cypress/no-unnecessary-waiting */
 describe('Google store', () => {
     it('can be visited', () => {
         cy.visit('https://store.google.com/')
@@ -22,16 +19,17 @@ describe('Google store', () => {
     })
 
     it('can configure Pixel 3', () => {
-        configurePhone('Fullscreen 5.5” display', 'Unlocked', 'Just Black', '64GB')
+        cy.configurePhone('Fullscreen 5.5” display', 'Unlocked', 'Just Black', '64GB')
     })
 
     it('can checkout cart', () => {
+        cy.get('.spinner-wrapper').should('not.be.visible')
         cy.get('iframe[name="paymentsParentDivIdIframe"]').then($iframe => {
             const $body = $iframe.contents().find('body')
         cy.wrap($body)
             .find('input[name=ContactEmailField]').type('test@test.com')
         cy.wrap($body)
-            .find('input[name=ContactEmailConfirm]').type('test@test.com')
+            .find('input[name=ContactEmailConfirm]').type('test@test.com', {force: true})
         })
     })
 })
