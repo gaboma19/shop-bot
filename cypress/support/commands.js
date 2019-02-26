@@ -16,43 +16,37 @@ Cypress.Commands.add("configurePhone", (size = 'Fullscreen 5.5” display', carr
         cy.get('.mqn-lobby__card').contains(size).parents().eq(3).click()
     })
 
-    cy.get('.mannequin')
-    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+    mannequinWait()
 
     cy.get('.mqn-h-cards__container').within(() => {
         cy.get('.mqn-h-cards__card').contains(carrier).click()
     })
 
-    cy.get('.mannequin')
-    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+    mannequinWait()
 
     cy.get('.mqn-lobby-swatch').within(() => {
         cy.get('.mqn-lobby-swatch__card').contains(color).parents().eq(3).click()
     })
 
-    cy.get('.mannequin')
-    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+    mannequinWait()
 
     cy.get('.mqn-cards__cards-container').within(() => {
         cy.get('.mqn-cards__card').contains(storage).click()
     })
 
-    cy.get('.mannequin')
-    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+    mannequinWait()
 
     cy.get('.navigator').within(() => {
         cy.get('button').contains('Next').click()
     })
     
-    cy.get('.mannequin')
-    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+    mannequinWait()
 
     cy.get('.review-panel').within(() => {
         cy.get('button').contains('Add to cart').click()
     })
     
-    cy.get('.mannequin')
-    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+    mannequinWait()
 
     cy.get('.interstitial-header').within(() => {
         cy.get('button').contains('Go to cart').click()
@@ -66,3 +60,8 @@ Cypress.Commands.add("configurePhone", (size = 'Fullscreen 5.5” display', carr
     cy.get('.checkout-page-container').should('be.visible')
     cy.get('.spinner-wrapper').should('not.be.visible')
 })
+
+function mannequinWait() {
+    cy.get('.mannequin')
+    cy.get('.mannequin-fade-out-from-left').should('not.be.visible')
+}
